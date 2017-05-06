@@ -23,28 +23,32 @@ $( document ).ready(function() {
 
 	var wins = 0;
 	var losses = 0;
+	var currentValue = 0;
+	var goalValue = 0;
+	var kittens = {
+		"kitten1":0,
+		"kitten2":0,
+		"kitten3":0,
+		"kitten4":0
+	};
 
 	function startGame() {
 
 		function randomizeKittens() {
-			// for (var i = 0; i < kittens.length; i++) {
-			// 	kittens[i] = Math.floor((Math.random() * 12) + 1);
-			// 	console.log("Kittens[i]: "+kittens[i]);
-			// }
 
 			for (var key in kittens) {
 				console.log(key);
 				kittens[key] = Math.floor((Math.random() * 12) + 1);
 			}
-
 			console.log(kittens);
 		};
 
+		$('.kitten').unbind('click');
 
-		var currentValue = 0;
-		var goalValue = 0;
+		currentValue = 0;
+		goalValue = 0;
 
-		var kittens = {
+		kittens = {
 			"kitten1":0,
 			"kitten2":0,
 			"kitten3":0,
@@ -69,28 +73,24 @@ $( document ).ready(function() {
 			currentValue += kittens[event.target.id];
 
 			console.log(currentValue);
-			// var blah = Math.floor((Math.random() * 120) + 19);
-			// console.log(blah);
-
-
-			// console.log($(this));
-
+			$("#currentValue").html(currentValue);
+			if (currentValue == goalValue) {
+				wins ++;
+				alert("You Win!");
+				startGame();
+			}
+			else if (currentValue > goalValue) {
+				losses ++;
+				alert("You Lose :(");
+				startGame();
+			}
+			else {
+				console.log("keep playing");
+			}
 		});
-		
-
 	};
-
-	// function addPoints() {
-	// 	currentValue = kittens + currentValue;
-	// 	console.log("currentValue: " + currentValue);
-	// };
 
 
 	$("#start").click(startGame);
-	
-
-	
-
-
 
 });
