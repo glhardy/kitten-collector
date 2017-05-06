@@ -7,7 +7,7 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 	<div class="container">
@@ -24,28 +24,31 @@
 				</ul>	
 			</div>
 		</div>
-		
+		<div><button id="start"><h2>Start Game!</h2></button></div>
 		<div class="row">
 			<div class="game">
-				<span id="goalValue">
-					<h3>Goal Value</h3>
-					<goalValue>
+				<span>
+					<h3>Goal Value : </h3>
+					<h4><goalValue></h4>
 				</span>
+				
 				<span id="scorekeep">
-				 Wins : <wins> 
+				 Wins : <wins>
 				 <br>
 				 Losses : <losses>
 				</span>
+				<span id="yourNumber">Your Number : <br> <span id="yourNumber"></span></span>
 				<div id="kittens">
-					<img src="kitten5.ico">
-					<img src="kitten3.png">
-					<img src="kitten6.png">
-					<img src="kitten4.png">
+					<img id="kitten1" class="btn" src="kitten5.ico">
+					<img id="kitten2" class="btn" src="kitten3.png">
+					<img id="kitten3" class="btn" src="kitten6.png">
+					<img id="kitten4" class="btn" src="kitten4.png">
 				</div>
 			</div>
 
 		</div>
 	</div>
-
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
