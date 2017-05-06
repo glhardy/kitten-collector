@@ -17,43 +17,80 @@
 	else - nothing
 
 */  
+$( document ).ready(function() {
 
-var yourNumber = 0;
-var goalValue = 0;
-var kittens = ["kitten1", "kitten2", "kitten3", "kitten4"];
+	console.log('ready');
 
-var wins = 0;
-var losses = 0;
+	var wins = 0;
+	var losses = 0;
 
-$("start").click(startGame);
-$("kittens").click(addPoints);
+	function startGame() {
 
-$("#goalValue").html(goalValue);
-$("#yourNumber").html(yourNumber);
-$("#wins").html(wins);
-$("#losses").html(losses);
+		function randomizeKittens() {
+			// for (var i = 0; i < kittens.length; i++) {
+			// 	kittens[i] = Math.floor((Math.random() * 12) + 1);
+			// 	console.log("Kittens[i]: "+kittens[i]);
+			// }
 
-function randomizeKittens() {
-	for (var i = 0; i < kittens.length; i++) {
-		kittens[i] = Math.floor((Math.random() * 12) + 1);
-	console.log(kittens[i]);
+			for (var key in kittens) {
+				console.log(key);
+				kittens[key] = Math.floor((Math.random() * 12) + 1);
+			}
+
+			console.log(kittens);
+		};
+
+
+		var currentValue = 0;
+		var goalValue = 0;
+
+		var kittens = {
+			"kitten1":0,
+			"kitten2":0,
+			"kitten3":0,
+			"kitten4":0
+		};
+
+		console.log("game started");
+		goalValue = Math.floor((Math.random() * 120) + 19);
+		console.log("Goal Value : "+goalValue);
+		currentValue = 0;
+		console.log("currentValue: "+currentValue);
+		randomizeKittens();
+
+		$("#goalValue").html(goalValue);
+		$("#currentValue").html(currentValue);
+		$("#wins").html(wins);
+		$("#losses").html(losses);
+
+		$(".kitten").click(function(event) {
+			console.log(event.target.id);
+
+			currentValue += kittens[event.target.id];
+
+			console.log(currentValue);
+			// var blah = Math.floor((Math.random() * 120) + 19);
+			// console.log(blah);
+
+
+			// console.log($(this));
+
+		});
+		
+
 	};
-};
 
-function startGame() {
-	console.log("game started");
-	goalValue = Math.floor((Math.random() * 120) + 19);
-	console.log(goalValue);
-	yourNumber = 0;
-	console.log(yourNumber);
-	randomizeKittens();
+	// function addPoints() {
+	// 	currentValue = kittens + currentValue;
+	// 	console.log("currentValue: " + currentValue);
+	// };
 
-};
 
-function addPoints() {
-	yourNumber = kittens[i] + yourNumber;
-};
+	$("#start").click(startGame);
+	
 
-$("start").click(startGame);
-$("kittens").click(addPoints);
+	
 
+
+
+});
