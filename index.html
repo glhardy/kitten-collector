@@ -2,6 +2,9 @@
 <head>
 	<title>Kitten Collector</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Source+Sans+Pro" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -10,17 +13,19 @@
 	<!-- github corner end -->
 
 
-	<div class="wrapper">
-		<div class="splash">
+	
+	<div id="splash">
+		<div class="content">
 			<h1>Kitten Collector</h1>
 			<div class="controls">
 				<button id="start">Start Game!</button>
 				<button id="rules">How To Play</button>
 			</div>
 		</div>
+	</div>
 
-
-		<div class="directions">
+	<div id="directions">
+		<div class="content">
 			<h2>Directions:</h2>
 			<ul>
 				<li>You will be given a random number at the start of the game, it is your Goal Value.</li>
@@ -30,35 +35,50 @@
 				<li>Each time when the game starts, the game will change the values of each crystal</li>
 			</ul>	
 		</div>
-	
+	</div>
 
-
-		<div class="row">
-			<div class="game">
-				<span>
-					<h3>Goal Value : </h3>
-					<h4 id="goalValue"></h4>
-				</span>
-				
-				<span id="scorekeep">
-				 Wins : <div id="wins"></div>
-				 <br>
-				 Losses : <div id="losses"></div>
-				</span>
-				<span>Your Number :<span id="currentValue"></span> 
-			    </span>
-				<div id="kittens">
-					<img id="kitten1" class="btn kitten" src="./assets/images/kitten1.png">
-					<img id="kitten2" class="btn kitten" src="./assets/images/kitten2.png">
-					<img id="kitten3" class="btn kitten" src="./assets/images/kitten3.png">
-					<img id="kitten4" class="btn kitten" src="./assets/images/kitten4.png">
+	<div id="game">
+		<div class="content">
+			<div class="points">
+				<div class="values">
+					<div>
+						<h3>Goal Value: 
+							<span id="goalValue"></span>
+						</h3>
+					</div>
+					<div>
+						<h3>
+							Current Value:
+							<span id="currentValue"></span>
+						</h3>
+					</div>
+				</div>
+				<div class="record">
+					<div>
+						<h3>
+							Wins:
+							<span id="wins"></span>
+						</h3>
+					</div>
+					<div>
+						<h3>
+							Losses:
+							<span id="losses"></span>
+						</h3>
+					</div>
 				</div>
 			</div>
 
+			<div id="kittens">
+				<img id="kitten1" class="kitten" src="./assets/images/kitten1.png">
+				<img id="kitten2" class="kitten" src="./assets/images/kitten2.png">
+				<img id="kitten3" class="kitten" src="./assets/images/kitten3.png">
+				<img id="kitten4" class="kitten" src="./assets/images/kitten4.png">
+			</div>
 		</div>
 	</div>
 
-	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.javascript"></script>
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>

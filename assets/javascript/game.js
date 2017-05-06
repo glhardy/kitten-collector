@@ -19,6 +19,10 @@
 */  
 $( document ).ready(function() {
 
+	$("#rules").click(function() {
+		$("#directions").slideToggle();
+	});
+
 	console.log('ready');
 
 	var wins = 0;
