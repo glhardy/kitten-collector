@@ -13,6 +13,7 @@ button {
 
 button {
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 
@@ -74,6 +75,17 @@ button {
 }
 
 #game #kittens .kitten {
-	padding: 1em;
-	flex: 1;
+	/*overflow: hidden;*/
+}
+
+#game #kittens .kitten img {
+	max-width:100%;
+	height: auto;
+	transition: all .2s ease-in-out;
+}
+
+#game #kittens .kitten img:hover {
+	max-width:105%;
+	height: auto;
+	cursor:	pointer;
 }
